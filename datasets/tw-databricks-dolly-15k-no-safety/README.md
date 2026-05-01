@@ -39,16 +39,7 @@ tags:
 
 ### 簡體字過濾
 
-使用 [`dragonmapper`](https://github.com/tsroten/dragonmapper) 對每筆翻譯結果進行字元級偵測：
-
-```python
-from dragonmapper import hanzi as H
-
-def has_any_simplified_only(text: str) -> bool:
-    return any(H.identify(ch) is H.SIMPLIFIED for ch in text)
-```
-
-只要任一欄位偵測到簡體專用字元，即以強化提示重新翻譯，最多重試 3 次。3 次後仍含簡體字的樣本會在輸出加上 `needs_review: true` 標記，方便後續人工檢查。
+對每筆翻譯結果進行字元級偵測，只要任一欄位包含簡體專用字元，即以強化提示重新翻譯，最多重試 3 次。3 次後仍含簡體字的樣本會在輸出加上 `needs_review: true` 標記，方便後續人工檢查。
 
 > 本資料集**不使用 OpenCC** 等簡轉繁轉換工具，避免機械式詞彙替換造成的臺灣用詞偏移。
 

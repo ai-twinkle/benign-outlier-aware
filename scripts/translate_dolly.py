@@ -3,8 +3,8 @@
 - Endpoint: https://qwen.pangolin.apmic.ai/v1/chat/completions (Qwen3.6-27B, no-think)
 - Concurrency: configurable, defaults to 16
 - Resume: appends to JSONL; on rerun, skips ids already present
-- Simplified detection: dragonmapper. If any simplified-only char appears, retranslate
-  with a stronger prompt up to N times, then mark `needs_review: true`
+- Simplified detection: per-character check. If any simplified-only char appears,
+  retranslate with a stronger prompt up to N times, then mark `needs_review: true`
 """
 from __future__ import annotations
 
