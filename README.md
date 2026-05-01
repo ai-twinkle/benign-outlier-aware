@@ -50,6 +50,7 @@ benign-outlier-aware/
 ### `datasets/GSM8K_zh_tw/`
 
 [`DoggiAI/GSM8K_zh_tw`](https://huggingface.co/datasets/DoggiAI/GSM8K_zh_tw) 完整快照，做為本研究**實用性（utility）評估**的數理推理基準之一。
+> 註：本資料集來源採用 `OpenCC` ，有可能會有錯誤的簡繁轉換，但就現階段暫不處理。
 
 | 切分 | 筆數 |
 |------|------|
